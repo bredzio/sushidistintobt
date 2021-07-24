@@ -29,12 +29,6 @@ p{
 
 header{
     width: 100%;
-    list-style-type: none;
-    overflow: hidden;
-    background-color:rgba(56, 56, 56, 0.7);
-    font-weight: bold;
-    border-bottom: 1px solid white;
-    margin-bottom: 20px;
 }
 
 .header2{
@@ -45,6 +39,21 @@ header{
 .header2 nav{
     line-height: 100px;
 }
+
+
+.navbar{
+    background-color:rgba(56, 56, 56, 0.7);
+    border-bottom: 1px solid white;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+.navbar-toggler{
+    background: #ecf0f1;
+    border: none;
+    outline: none;
+}
+
 
 nav{
     line-height: 50px;
@@ -124,6 +133,33 @@ div a:active{
 
 /* Index */
 .home{ 
+    height: 45em;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size:cover;
+    border-bottom: 10px solid #000;
+    z-index: auto; 
+    background-attachment:fixed;
+    
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:flex-start;
+    padding:6rem 0 0 0;
+}
+.home .tituloPrincipal{
+    flex: 1;
+    margin: 120px 10px 100px 0;
+}
+
+.home .tituloPrincipal h1{
+    flex: 1;
+    font-size: 60px;   
+    font-weight: bold;
+    margin: 5px 0 0 0;
+}
+
+.homeSec{ 
     height: 40em;
     background-repeat: no-repeat; 
     background-position: center; 
@@ -136,14 +172,15 @@ div a:active{
     flex-direction: column;
     align-items:center;
     justify-content:flex-start;
+    padding: 6rem 0;
 }
 
-.home .tituloPrincipal{
+.homeSec .tituloPrincipal{
     flex: 1;
     margin: 120px 10px 100px 0;
 }
 
-.home .tituloPrincipal h1{
+.homeSec .tituloPrincipal h1{
     flex: 1;
     font-size: 60px;   
     font-weight: bold;
@@ -343,7 +380,13 @@ div a:active{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 6rem
+    padding: 6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
 }
 
 
@@ -357,6 +400,7 @@ div a:active{
 }
 
 .flex-titulos h1{
+    display: flex;
     color: #fff;    
     font-size: 2rem;
     line-height: 1.5;
@@ -505,31 +549,32 @@ div a:active{
 /* SOBRE NOSOTROS (FLEX) */
 
 .flexpadre{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items:center;
-    justify-content:center;
-    margin: 2rem 1rem;
-    gap: 3rem;
+    gap: 30rem;
+    padding: 5rem 0;
 }
 
 .flexpadre .contenidomaster{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 7rem;
 }
 
 .flexpadre .contenidomaster .contenido{
     text-align:left;
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
 }
 
 .flexpadre .imagen{
-    flex: 1;
+    display: flex;
+    height: 500px;
+    width: 500px;
 }
 
-.flexpadre .imagen img{
-    min-height: 20rem;
-    min-width: 20rem;
-}
 
 .flexpadre .contenido h1{
     color: salmon;
