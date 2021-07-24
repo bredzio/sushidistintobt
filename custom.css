@@ -770,9 +770,9 @@ div a:active{
 footer{
     background-color:#77444f;
     border-top: 10px solid cadetblue;
-    height: 100px;
-    padding: 40px;
-    clear: both;
+    
+    height: 6rem;
+    padding: 3rem 0;
     display: flex;
     flex-wrap: nowrap;
     text-align: center;
