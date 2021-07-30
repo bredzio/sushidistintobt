@@ -1,7 +1,16 @@
+//
+//RESET
+//
+
 *{
     font-family: 'Noto Sans', sans-serif;
     font-weight:normal;
 }
+//
+
+//
+//COLORES DEFINIDOS (VARIABLES)
+//
 
 $background-main:#ecf0f1;
 $text-color-main:#fff;
@@ -9,12 +18,30 @@ $a-hover-color:#A25768;
 $a-active-color:#6f3a46;
 $footer-background-color:#77444f;
 $footer-border:10px solid cadetblue;
+//
 
+//
+//@EXTENDS
+//
 .design-background{
     background-repeat: no-repeat; 
     background-position: center; 
     background-size:cover;
+    border-bottom: 10px solid #000;
+    z-index: auto; 
+    background-attachment:fixed;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:flex-start;
 }
+
+.display-flex-center{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+//
 
 body{
     background:$background-main;
@@ -132,18 +159,13 @@ div a:active{
     color: #03afff;
 }
 
-/* Index */
+//
+//INDEX
+//
+
 .home{ 
     @extend .design-background;
-    
     height: 45em;
-    border-bottom: 10px solid #000;
-    z-index: auto; 
-    background-attachment:fixed;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content:flex-start;
     padding:6rem 0 0 0;
 
     .tituloPrincipal{
@@ -184,14 +206,6 @@ div a:active{
 .homeSec{ 
     @extend .design-background;
     height: 40em;
-    border-bottom: 10px solid #000;
-    z-index: auto; 
-    background-attachment:fixed;
-    
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content:flex-start;
     padding: 6rem 0;
 
     .tituloPrincipal{
@@ -209,21 +223,19 @@ div a:active{
 
 
 .divBotones{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend .display-flex-center;
 }
+//
 
+//
+//CURSO RECOMENDADO
+//
 
-
-/*CURSO RECOMENDADO*/
 .cursoRecomendado { 
+    @extend .display-flex-center;
     min-height: 700px;    
-    display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    align-items:center;
-    justify-content:center;
     padding: 3rem;
 
     div{
@@ -263,21 +275,17 @@ div a:active{
 }
 
 .divBotonesRecomendado{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend .display-flex-center;
 }
 
 
 
 /* Tu Sushiman */
 .tuSushiman{
+    @extend .display-flex-center;
     background-color: #000;
-    display: flex;
     flex-direction:row;
     flex-wrap: wrap;
-    align-items:center;
-    justify-content:center;
     gap: 3rem;
 
     div{ 
@@ -309,8 +317,11 @@ div a:active{
         }  
     }
 }
+//
 
-/* GRID CURSOS */
+//
+//GRID CURSOS
+//
 
 .alumnos{
     background-color: #fff;
@@ -327,9 +338,7 @@ div a:active{
 
 
 .grid-item{
-    display: flex;
-    align-items: center;
-    justify-content: center;    
+    @extend .display-flex-center; 
     border-radius: 4px;
     background-color: #03afff;
     background-size: cover;
@@ -368,10 +377,14 @@ div a:active{
     gap: 20px;
     padding: 20px;
 }
+//
 
-/* CAMPAÑA EMAIL */
+//
+//CAMPAÑA EMAIL
+//
 
 .ofertas{
+    @extend .display-flex-center;
     height: 35rem;
     background-image:url(./Imagenes/ofertas3.jpg);
     background-size: cover;
@@ -379,18 +392,13 @@ div a:active{
     background-repeat: no-repeat;
     padding: 6rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: nowrap;
     flex-direction: column;
 }
 
 
 .flex-titulos{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend .display-flex-center;
     flex-wrap: wrap;
     flex-direction: column;
     margin: 20px;
@@ -414,15 +422,11 @@ div a:active{
 
 
 .divFormulario{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend .display-flex-center;
 }
 
 .formularios{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend .display-flex-center;
     flex-wrap: wrap;
     flex-direction:row;
     gap: 30px;
@@ -457,8 +461,11 @@ div a:active{
     border-radius: 50px;
     text-align: center;
 }
+//
 
-/*TIENDA-CURSOS*/
+//
+//TIENDA CURSOS
+//
 
 .clase{
     margin: 2rem 1rem ;
@@ -505,20 +512,19 @@ div a:active{
         color: black;
     }
 }
+//
 
-
-
-/* SERVICIOS */
+//
+//SERVICIOS
+//
 
 .overlay{
     background-color: $background-main;
 }
 
 .flex-container-servicios{
-    display: flex;
+    @extend .display-flex-center;
     flex-wrap: wrap;
-    justify-content: center;
-    justify-items: center;
 }
 
 .flex-item-servicios{
@@ -546,21 +552,19 @@ div a:active{
         margin: 10px 0;
     }
 }
+//
 
-
-
-/* SOBRE NOSOTROS (FLEX) */
-
+//
+//SOBRE NOSOTROS - FLEX
+//
 .flexpadre{
     gap: 30rem;
     padding: 5rem 0;
 
     .contenidomaster{
-        display: flex;
+        @extend .display-flex-center;
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
         gap: 7rem;
     }
 
@@ -623,10 +627,8 @@ div a:active{
 
 
 .motivos{
-    display: flex;
+    @extend .display-flex-center;
     flex-wrap:wrap;
-    justify-content: center;
-    align-content:center;
     background-color:#fff;
     padding: 3rem 1rem;
     gap: 3rem;
@@ -658,27 +660,25 @@ div a:active{
     }
 
 }   
+//
 
-
-/* FORMULARIO */
-
+//
+//FORMULARIOS
+//
 .contenedor{
-    padding: 5rem 0;
-    display: flex;
+    @extend .display-flex-center;
+    padding: 5rem 1rem;
     flex-direction:column;
-    text-align: center;
-    justify-content: center;
+
 
     .flex-titulos{   
         h1{
+            @extend .display-flex-center;
             font-size: 2rem;
             line-height: 1.5;
-            text-align: center;
-            display: flex;
             flex-wrap: wrap;
             font-weight: bold;
             color: #4cc9f0;
-            justify-content: center;
         }
     
         h2{
@@ -692,22 +692,22 @@ div a:active{
     }
 
     .div-form{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @extend .display-flex-center;
         flex-direction: column;
-
-
+        
             .elemento{
+                margin: 0 0.5rem;
+                
                 label{
                     color: black;
                     text-align: center;
-                    margin-left: 1rem;
+                    margin-left: 2rem;
+                    justify-content: center;
                 }
         
                 input{
                     margin: 1rem 0;
-                    width:75%;
+                    width:90%;
                     padding: 1rem;  
                     color: gray;
                     border-radius: 5px;
@@ -717,7 +717,7 @@ div a:active{
             } 
         
             .pregunta textarea{
-                width:75%;
+                width:90%;
                 color: gray;
                 border-radius: 5px;
                 border-color:1px solid(0,0,0,0.15);
@@ -726,14 +726,14 @@ div a:active{
                 font-size: 20px;
                 font-weight: 400;
                 line-height: 1.5;
-                display: block;
-                size:6rem;
+                size:5rem;
                 height: 12rem;
-                margin: 1rem 3.2rem;
+                margin: 1rem 1.5rem;
                 padding: 1rem;
             }
         
             .promociones{
+                text-align: center;
                 label{
                     color: #000;
                     text-align: center;
@@ -748,16 +748,19 @@ div a:active{
             }
 
             .elemento {
+                text-align: center;
+                justify-content: center;
+                
                 input[type="submit"]{
                     background-color: none;
                     border:2px solid black;
                     color: #000;        
                     text-transform: uppercase;
                     cursor: pointer;
-                    padding: 15px;
-                    margin-top: 30px;   
-                    width: 120px;
-                    font-size: 15px;
+                    padding: 1rem;
+                    margin-top: 2rem;   
+                    width: 7rem;
+                    font-size: 1rem;
                     font-weight: bold;    
                     border-radius: 50px;
                 }
@@ -768,36 +771,36 @@ div a:active{
                     color: #000;
                     text-transform: uppercase;
                     cursor: pointer;
-                    padding: 15px;
-                    margin-top: 30px;
-                    width: 120px;
-                    font-size: 15px;
+                    padding: 1rem;
+                    margin-top: 2rem;
+                    width: 7rem;
+                    font-size: 1rem;
                     font-weight: bold;    
                     border-radius: 50px;
+
                 }
             }
     }
 }
+//
 
-
-
-/* FOOTER */
+//
+//FOOTER
+//
 
 footer{
     background-color:$footer-background-color;
     border-top:$footer-border;
-    
+    @extend .display-flex-center;
     height: 6rem;
     padding: 3rem 0;
-    display: flex;
     flex-wrap: nowrap;
-    text-align: center;
-    justify-content: center;
 
     p{
         text-align: center; 
         font-size: 15px;
     }
 }
+//
 
   

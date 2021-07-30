@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   font-family: 'Noto Sans', sans-serif;
   font-weight: normal;
@@ -8,6 +7,34 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  border-bottom: 10px solid #000;
+  z-index: auto;
+  background-attachment: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.display-flex-center, .divBotones, .cursoRecomendado, .divBotonesRecomendado, .tuSushiman, .grid-item, .ofertas, .flex-titulos, .divFormulario, .formularios, .flex-container-servicios, .flexpadre .contenidomaster, .motivos, .contenedor, .contenedor .flex-titulos h1, .contenedor .div-form, footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body {
@@ -124,25 +151,8 @@ div a:active {
   color: #03afff;
 }
 
-/* Index */
 .home {
   height: 45em;
-  border-bottom: 10px solid #000;
-  z-index: auto;
-  background-attachment: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   padding: 6rem 0 0 0;
 }
 
@@ -184,22 +194,6 @@ div a:active {
 
 .homeSec {
   height: 40em;
-  border-bottom: 10px solid #000;
-  z-index: auto;
-  background-attachment: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   padding: 6rem 0;
 }
 
@@ -219,36 +213,14 @@ div a:active {
   margin: 5px 0 0 0;
 }
 
-.divBotones {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-/*CURSO RECOMENDADO*/
 .cursoRecomendado {
   min-height: 700px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   padding: 3rem;
 }
 
@@ -285,36 +257,15 @@ div a:active {
   color: black;
 }
 
-.divBotonesRecomendado {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 /* Tu Sushiman */
 .tuSushiman {
   background-color: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   gap: 3rem;
 }
 
@@ -347,7 +298,6 @@ div a:active {
   margin-top: 20px;
 }
 
-/* GRID CURSOS */
 .alumnos {
   background-color: #fff;
   padding: 50px 0;
@@ -361,15 +311,6 @@ div a:active {
 }
 
 .grid-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   border-radius: 4px;
   background-color: #03afff;
   background-size: cover;
@@ -416,7 +357,6 @@ div a:active {
   padding: 20px;
 }
 
-/* CAMPAÑA EMAIL */
 .ofertas {
   height: 35rem;
   background-image: url(./Imagenes/ofertas3.jpg);
@@ -424,15 +364,6 @@ div a:active {
   background-position: center;
   background-repeat: no-repeat;
   padding: 6rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   -webkit-box-orient: vertical;
@@ -442,15 +373,6 @@ div a:active {
 }
 
 .flex-titulos {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-orient: vertical;
@@ -478,28 +400,7 @@ div a:active {
   color: #fff;
 }
 
-.divFormulario {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .formularios {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-orient: horizontal;
@@ -536,7 +437,6 @@ div a:active {
   text-align: center;
 }
 
-/*TIENDA-CURSOS*/
 .clase {
   margin: 2rem 1rem;
 }
@@ -591,21 +491,13 @@ div a:active {
   color: black;
 }
 
-/* SERVICIOS */
 .overlay {
   background-color: #ecf0f1;
 }
 
 .flex-container-servicios {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  justify-items: center;
 }
 
 .flex-item-servicios {
@@ -634,28 +526,18 @@ div a:active {
   margin: 10px 0;
 }
 
-/* SOBRE NOSOTROS (FLEX) */
 .flexpadre {
   gap: 30rem;
   padding: 5rem 0;
 }
 
 .flexpadre .contenidomaster {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   gap: 7rem;
 }
 
@@ -720,16 +602,8 @@ div a:active {
 }
 
 .motivos {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
   background-color: #fff;
   padding: 3rem 1rem;
   gap: 3rem;
@@ -764,36 +638,21 @@ div a:active {
   cursor: pointer;
 }
 
-/* FORMULARIO */
 .contenedor {
-  padding: 5rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  padding: 5rem 1rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .contenedor .flex-titulos h1 {
   font-size: 2rem;
   line-height: 1.5;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-weight: bold;
   color: #4cc9f0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .contenedor .flex-titulos h2 {
@@ -808,30 +667,28 @@ div a:active {
 }
 
 .contenedor .div-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
+.contenedor .div-form .elemento {
+  margin: 0 0.5rem;
+}
+
 .contenedor .div-form .elemento label {
   color: black;
   text-align: center;
-  margin-left: 1rem;
+  margin-left: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .contenedor .div-form .elemento input {
   margin: 1rem 0;
-  width: 75%;
+  width: 90%;
   padding: 1rem;
   color: gray;
   border-radius: 5px;
@@ -840,7 +697,7 @@ div a:active {
 }
 
 .contenedor .div-form .pregunta textarea {
-  width: 75%;
+  width: 90%;
   color: gray;
   border-radius: 5px;
   border-color: 1px solid(0, 0, 0, 0.15);
@@ -849,11 +706,14 @@ div a:active {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
-  display: block;
-  size: 6rem;
+  size: 5rem;
   height: 12rem;
-  margin: 1rem 3.2rem;
+  margin: 1rem 1.5rem;
   padding: 1rem;
+}
+
+.contenedor .div-form .promociones {
+  text-align: center;
 }
 
 .contenedor .div-form .promociones label {
@@ -869,16 +729,23 @@ div a:active {
           transform: scale(2);
 }
 
+.contenedor .div-form .elemento {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .contenedor .div-form .elemento input[type="submit"] {
   background-color: none;
   border: 2px solid black;
   color: #000;
   text-transform: uppercase;
   cursor: pointer;
-  padding: 15px;
-  margin-top: 30px;
-  width: 120px;
-  font-size: 15px;
+  padding: 1rem;
+  margin-top: 2rem;
+  width: 7rem;
+  font-size: 1rem;
   font-weight: bold;
   border-radius: 50px;
 }
@@ -889,29 +756,21 @@ div a:active {
   color: #000;
   text-transform: uppercase;
   cursor: pointer;
-  padding: 15px;
-  margin-top: 30px;
-  width: 120px;
-  font-size: 15px;
+  padding: 1rem;
+  margin-top: 2rem;
+  width: 7rem;
+  font-size: 1rem;
   font-weight: bold;
   border-radius: 50px;
 }
 
-/* FOOTER */
 footer {
   background-color: #77444f;
   border-top: 10px solid cadetblue;
   height: 6rem;
   padding: 3rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 footer p {
