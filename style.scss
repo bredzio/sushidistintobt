@@ -3,26 +3,32 @@
     font-weight:normal;
 }
 
+$background-main:#ecf0f1;
+$text-color-main:#fff;
+$a-hover-color:#A25768;
+$a-active-color:#6f3a46;
+$footer-background-color:#77444f;
+$footer-border:10px solid cadetblue;
 
 body{
-    background:#ecf0f1;
+    background:$background-main;
 }  
 
 h1{
-    color:white ;
+    color:$text-color-main ;
     text-align: center;
 }
 
 h2{
     font-size: 40px;
-    color: white;
+    color: $text-color-main;
     font-weight: bold;
     text-align: center;
 }
 
 
 p{
-    color:white;
+    color:$text-color-main;
     font-size: 20px;
 }
 
@@ -45,11 +51,10 @@ header{
     border-bottom: 1px solid white;
     font-weight: bold;
     list-style-type: none;
-    
 }
 
 .navbar-toggler{
-    background: #ecf0f1;
+    background: $background-main;
     border: none;
     outline: none;
 }
@@ -59,7 +64,7 @@ nav{
     line-height: 50px;
 
     a{
-        color:#fff;
+        color:$text-color-main;
         line-height:30px;
         font-size:20px;
         font-weight:bold;
@@ -79,21 +84,21 @@ a:hover{
 }
 
 a:link{
-    color: white;
+    color: $text-color-main;
     text-decoration: none;
 }
 
 a:visited{
-    color: white;
+    color: $text-color-main;
 }
 
 a:hover{
-    color: #A25768;
+    color: $a-hover-color;
     text-decoration: underline;
 }
 
 a:active{
-    color: #6f3a46;
+    color: $a-active-color;
     text-decoration: underline;
 }
 
@@ -390,7 +395,7 @@ div a:active{
 
     h1{
         display: flex;
-        color: #fff;    
+        color: $text-color-main;    
         font-size: 2rem;
         line-height: 1.5;
         font-weight: bold;
@@ -401,7 +406,7 @@ div a:active{
         font-size: 1rem;
         text-align: center;
         font-weight: normal;
-        color:#fff;    
+        color:$text-color-main;    
     }
 }
 
@@ -422,7 +427,7 @@ div a:active{
 
     .elemento{
         label{
-            color: #fff;
+            color: $text-color-main;
             padding: 20px;
         }
 
@@ -440,7 +445,7 @@ div a:active{
 #suscribite{
     background-color: #000;
     border:2px solid black;
-    color: #fff;        
+    color: $text-color-main;        
     text-transform: uppercase;
     cursor: pointer;
     padding: 1rem;   
@@ -464,7 +469,6 @@ div a:active{
         margin-bottom: 70px;
     }
 }
-
 
 
 .flex-container-clases{
@@ -505,7 +509,7 @@ div a:active{
 /* SERVICIOS */
 
 .overlay{
-    background-color: #ecf0f1;
+    background-color: $background-main;
 }
 
 .flex-container-servicios{
@@ -778,8 +782,8 @@ div a:active{
 /* FOOTER */
 
 footer{
-    background-color:#77444f;
-    border-top: 10px solid cadetblue;
+    background-color:$footer-background-color;
+    border-top:$footer-border;
     
     height: 6rem;
     padding: 3rem 0;
