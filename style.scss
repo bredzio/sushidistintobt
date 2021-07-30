@@ -1,0 +1,790 @@
+*{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight:normal;
+}
+
+
+
+body{
+    background:#ecf0f1;
+}  
+
+h1{
+    color:white ;
+    text-align: center;
+}
+
+h2{
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+p{
+    color:white;
+    font-size: 20px;
+}
+
+header{
+    width: 100%;
+}
+
+.header2{
+    position: fixed;
+    height: 120px;
+
+    nav{
+        line-height: 100px;
+    }    
+}
+
+
+.navbar{
+    background-color:rgba(56, 56, 56, 0.7);
+    border-bottom: 1px solid white;
+    font-weight: bold;
+    list-style-type: none;
+    
+}
+
+.navbar-toggler{
+    background: #ecf0f1;
+    border: none;
+    outline: none;
+}
+
+
+nav{
+    line-height: 50px;
+
+    a{
+        color:#fff;
+        line-height:30px;
+        font-size:20px;
+        font-weight:bold;
+        -webkit-transition:all 500ms ease;
+        -o-transition:all 500ms ease;
+        transition:all 500ms ease;
+    }
+}
+
+.pushRight{
+    margin-left: auto;
+    flex: 1;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+a:link{
+    color: white;
+    text-decoration: none;
+}
+
+a:visited{
+    color: white;
+}
+
+a:hover{
+    color: #A25768;
+    text-decoration: underline;
+}
+
+a:active{
+    color: #6f3a46;
+    text-decoration: underline;
+}
+
+div a:hover{
+    text-decoration: none;
+}
+
+div a:active{
+    text-decoration: none;
+}
+
+.flex-container-clases a{
+    color: #000;
+}
+
+.flex-container-clases a:visited{
+    color: #000;
+}
+
+.flex-container-clases a:hover{
+    color: #000;
+}
+
+.tuSushiman .descripcion h2 a{
+    color: #03afff;
+}
+
+/* Index */
+.home{ 
+    height: 45em;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size:cover;
+    border-bottom: 10px solid #000;
+    z-index: auto; 
+    background-attachment:fixed;
+    
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:flex-start;
+    padding:6rem 0 0 0;
+
+    .tituloPrincipal{
+        flex: 1;
+        margin: 120px 10px 100px 0;
+
+        h1{
+            flex: 1;
+            font-size: 60px;   
+            font-weight: bold;
+            margin: 5px 0 0 0;
+        }
+
+        h2{
+            flex: 1;
+            font-size: 25px;   
+            font-weight: bold;
+            margin: 0px 0 10px 0;
+        }
+
+    }
+    
+    .botones{
+        text-align: center;
+        background-color: white;
+        border-radius: 50px;
+        font-size: 20px; 
+        padding: 20px 45px;
+        font-weight: bold;
+        cursor: pointer;
+        color: black; 
+    }
+    
+}
+
+
+
+.homeSec{ 
+    height: 40em;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size:cover;
+    border-bottom: 10px solid #000;
+    z-index: auto; 
+    background-attachment:fixed;
+    
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:flex-start;
+    padding: 6rem 0;
+
+    .tituloPrincipal{
+        flex: 1;
+        margin: 120px 10px 100px 0;
+
+        h1{
+            flex: 1;
+            font-size: 60px;   
+            font-weight: bold;
+            margin: 5px 0 0 0;
+        }
+    }
+}
+
+
+.divBotones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*CURSO RECOMENDADO*/
+.cursoRecomendado { 
+    min-height: 700px;    
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    padding: 3rem;
+
+    div{
+        text-align: center;
+        line-height: 50px;
+        margin: 0 2rem;
+    }
+
+    .botones{
+        text-align: center;
+        background-color: white;
+        border-radius: 50px;
+        font-size: 20px; 
+        padding: 20px 45px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    h1{
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        padding: 0%;
+    }
+
+    h2{
+        color: #000;
+        margin-bottom: 1rem;
+    }
+
+    p{
+        color: black;
+    }
+
+
+}
+
+.divBotonesRecomendado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Tu Sushiman */
+.tuSushiman{
+    background-color: #000;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content:center;
+    gap: 3rem;
+
+    div{ 
+        margin: 0 2rem; 
+        padding:3rem 0;
+    }
+
+    .descripcion{
+        text-align: left;
+
+        h1{
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        p{
+            font-size: 0.1 rem;
+            font-weight: normal;
+            margin-top: 10px;
+        }   
+
+        h2{
+            font-size: 1rem;
+            color:#03afff;
+            font-weight: normal;
+            text-align: left;
+            margin-top: 20px;
+        }  
+    }
+}
+
+/* GRID CURSOS */
+
+.alumnos{
+    background-color: #fff;
+    padding: 50px 0;
+
+    h1{
+        color: #000;
+        margin: 40px 0 20px 0 ;
+        font-size: 50px;
+        font-weight: bold;
+    }
+}
+
+
+
+.grid-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    border-radius: 4px;
+    background-color: #03afff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 300ms;
+}
+
+.grid-item::after{
+    content: "";
+    background-color: rgba(179, 229, 252, .1);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: all 300ms;
+    opacity: 0;
+}
+
+.grid-item:hover:after{
+    opacity: 1;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.grid-item:hover{   
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-auto-rows: minmax(300px,auto);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* CAMPAÑA EMAIL */
+
+.ofertas{
+    height: 35rem;
+    background-image:url(./Imagenes/ofertas3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+
+.flex-titulos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 20px;
+
+    h1{
+        display: flex;
+        color: #fff;    
+        font-size: 2rem;
+        line-height: 1.5;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    h2{
+        font-size: 1rem;
+        text-align: center;
+        font-weight: normal;
+        color:#fff;    
+    }
+}
+
+
+.divFormulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formularios{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction:row;
+    gap: 30px;
+
+    .elemento{
+        label{
+            color: #fff;
+            padding: 20px;
+        }
+
+        input{
+            color: gray;
+            border-radius: 5px;
+            border-color: gainsboro;
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+    }
+}    
+
+
+#suscribite{
+    background-color: #000;
+    border:2px solid black;
+    color: #fff;        
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 1rem;   
+    width: 8rem;
+    font-size: 15px;
+    font-weight: bold;    
+    border-radius: 50px;
+    text-align: center;
+}
+
+/*TIENDA-CURSOS*/
+
+.clase{
+    margin: 2rem 1rem ;
+
+    h1{
+        color: #000;
+        text-align: left;
+        font-weight: bold;
+        font-size: 2.5rem;
+        margin-bottom: 70px;
+    }
+}
+
+
+
+.flex-container-clases{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.flex-item-clases{
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 2px 2px rgba(56, 56, 56, 0.5);
+    padding: 40px;
+
+    h2{
+        color: black;
+        font-size:2rem;
+        font-weight: bold;
+        text-align: left;
+        margin: 10px 0;
+    }
+
+    h3{
+        font-size: 2rem;
+        font-weight:bold;
+        margin: 70px 0 0 0;
+    }
+
+    p{
+        color: black;
+    }
+}
+
+
+
+/* SERVICIOS */
+
+.overlay{
+    background-color: #ecf0f1;
+}
+
+.flex-container-servicios{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+}
+
+.flex-item-servicios{
+    padding: 10px;
+    max-width: 400px;
+
+    h1{
+        color: black;
+        font-weight: bold;
+        text-align: left;
+        margin: 20px 0;
+    }
+
+    p{
+        color: black;
+        text-align: left;
+        font-size: 1rem;
+        line-height: 30px;
+    }
+    
+    img{
+        width: 300px;;
+        height: 200px;
+        border-radius: 5px;
+        margin: 10px 0;
+    }
+}
+
+
+
+/* SOBRE NOSOTROS (FLEX) */
+
+.flexpadre{
+    gap: 30rem;
+    padding: 5rem 0;
+
+    .contenidomaster{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 7rem;
+    }
+
+    .contenido{
+        text-align:left;
+        display: flex;
+        flex-direction: column;
+        max-width: 20rem;
+
+        h1{
+            color: salmon;
+            font-size: 20px;
+            font-weight: normal;
+            font-style: italic;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        h2{
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 0%;
+        }
+
+        h3{
+            color: salmon;
+            font-weight: normal;
+            font-size: 20px;
+            text-align: left;
+            margin:20px 0px;
+        }
+
+        h4{
+            text-align: left;
+            font-size: 18px;
+            margin: 5px 0px;
+        
+        }
+
+        p{
+            color:black;
+            text-align: left;
+            font-size: 20px;    
+            margin: 0;
+            line-height: 1.5;
+        }
+
+    }
+
+    .imagen{
+        display: flex;
+        height: 500px;
+        width: 500px;
+    }
+}
+
+
+
+.motivos{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-content:center;
+    background-color:#fff;
+    padding: 3rem 1rem;
+    gap: 3rem;
+
+    h2{
+        color: black;
+        font-size: 40px;
+        font-weight: bolder;
+        margin-bottom: 5rem;
+        text-align: center;
+        align-content: center;
+    }
+
+    p{
+        color: black;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .botones{
+        flex: 1;
+        text-align: center;
+        background-color: white;
+        border-radius: 50px;
+        font-size: 20px; 
+        padding: 20px 45px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+}   
+
+
+/* FORMULARIO */
+
+.contenedor{
+    margin: 50px auto;
+    width: 800px;
+    padding: 30px;
+
+    h1{
+        padding: 0;
+        font-size: 35px;
+        font-weight: bold;
+        color: #4cc9f0;
+        text-align: center;
+    }
+
+    h2{
+        padding-top: 5px;
+        padding-bottom: 40px;
+        font-size: 20px;
+        text-align: center;
+        font-weight: normal;
+        color: gray;
+        margin: auto;
+    }
+
+    .elemento{
+        label{
+            color: black;
+            text-align: center;
+            margin-left: 15px;
+            border: 1px solid salmon;
+        }
+
+        input{
+            margin: 10px 90px;
+            width:75%;
+            padding: 10.5px 10px;  
+            color: gray;
+            border-radius: 5px;
+            border-color: gainsboro;
+            font-size: 20px;
+        }
+    } 
+
+    .pregunta textarea{
+        margin: 20px 90px;
+        width:75%;
+        padding: 10.5px 10px;
+        color: gray;
+        border-radius: 5px;
+        border-color:1px solid(0,0,0,0.15);
+        background-color: #fff;
+        background-clip: padding-box;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.5;
+        display: block;
+        size:100px;
+        height: 200px;
+    }
+
+    .promociones{
+        label{
+            color: #000;
+            margin-left: 130px;
+            text-align: center;
+            font-size: 20px;
+        } 
+
+        input[type="checkbox"]{
+            margin-left: 10px;
+            padding: 20px;
+            transform: scale(2);
+        }
+
+
+    }
+
+    .elemento {
+            input[type="submit"]{
+                margin: 0 0 0 250px;
+                background-color: none;
+                border:2px solid black;
+                color: #000;        
+                text-transform: uppercase;
+                cursor: pointer;
+                padding: 15px;
+                margin-top: 30px;   
+                width: 120px;
+                font-size: 15px;
+                font-weight: bold;    
+                border-radius: 50px;
+            }
+
+            input[type="reset"]{
+                margin: 0 0 0 30px;
+                background-color: none;
+                border:2px solid black;
+                color: #000;
+                text-transform: uppercase;
+                cursor: pointer;
+                padding: 15px;
+                margin-top: 30px;
+                width: 120px;
+                font-size: 15px;
+                font-weight: bold;    
+                border-radius: 50px;
+            }
+    
+        }
+}
+
+
+/* FOOTER */
+
+footer{
+    background-color:#77444f;
+    border-top: 10px solid cadetblue;
+    
+    height: 6rem;
+    padding: 3rem 0;
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: center;
+
+    p{
+        text-align: center; 
+        font-size: 15px;
+    }
+}
+
+  
