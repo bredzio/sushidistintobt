@@ -10,6 +10,12 @@ $a-active-color:#6f3a46;
 $footer-background-color:#77444f;
 $footer-border:10px solid cadetblue;
 
+.design-background{
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size:cover;
+}
+
 body{
     background:$background-main;
 }  
@@ -128,14 +134,12 @@ div a:active{
 
 /* Index */
 .home{ 
+    @extend .design-background;
+    
     height: 45em;
-    background-repeat: no-repeat; 
-    background-position: center; 
-    background-size:cover;
     border-bottom: 10px solid #000;
     z-index: auto; 
     background-attachment:fixed;
-    
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -178,10 +182,8 @@ div a:active{
 
 
 .homeSec{ 
+    @extend .design-background;
     height: 40em;
-    background-repeat: no-repeat; 
-    background-position: center; 
-    background-size:cover;
     border-bottom: 10px solid #000;
     z-index: auto; 
     background-attachment:fixed;

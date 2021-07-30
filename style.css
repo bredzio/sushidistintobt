@@ -4,24 +4,30 @@
   font-weight: normal;
 }
 
+.design-background, .home, .homeSec {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 body {
   background: #ecf0f1;
 }
 
 h1 {
-  color: white;
+  color: #fff;
   text-align: center;
 }
 
 h2 {
   font-size: 40px;
-  color: white;
+  color: #fff;
   font-weight: bold;
   text-align: center;
 }
 
 p {
-  color: white;
+  color: #fff;
   font-size: 20px;
 }
 
@@ -76,12 +82,12 @@ a:hover {
 }
 
 a:link {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 
 a:visited {
-  color: white;
+  color: #fff;
 }
 
 a:hover {
@@ -121,9 +127,6 @@ div a:active {
 /* Index */
 .home {
   height: 45em;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   border-bottom: 10px solid #000;
   z-index: auto;
   background-attachment: fixed;
@@ -181,9 +184,6 @@ div a:active {
 
 .homeSec {
   height: 40em;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   border-bottom: 10px solid #000;
   z-index: auto;
   background-attachment: fixed;
