@@ -52,33 +52,38 @@
 
 
     <div class="contenedor">
-        <h1 data-aos="fade-up" data-aos-delay=»100″>Envíame un mensaje</h1>
-        <h2 data-aos="fade-up" data-aos-delay=»100″>Te responderé lo más pronto posible</h2>
         
-        <form id="forma" name="forma" method="POST">
-            <div class="elemento" data-aos="fade-up" data-aos-delay=»100″>
-                <input type="text" id="nombre" name="nombre" required="True" placeholder="Nombre">
-            </div>
-            
-            <div class="elemento" data-aos="fade-up" data-aos-delay=»100″>
-                <input type="email" name="email" placeholder="E-mail" required="True">
-            </div>  
+        <div class="flex-titulos">
+            <div><h1 data-aos="fade-up" data-aos-delay=»50″>Envíame un mensaje</h1></div>
+            <div><h2 data-aos="fade-up" data-aos-delay=»50″>Te responderé lo más pronto posible</h2></div>
+        </div>
 
-            <div class="pregunta" data-aos="fade-up" data-aos-delay=»100″>   
-                <textarea name="comentarios" placeholder="Pregunta" required="1"></textarea>
-            </div>   
-            
-            <div class="promociones" data-aos="fade-up" data-aos-delay=»100″>
-                <label for="newsletter">¿Desea recibir promociones y/o descuentos?</label>
-                <input  type="checkbox" name="newsletter" value="1">
-            </div>    
+        <div class="div-form">
+            <form id="formulario" name="forma" method="POST">
                 <div class="elemento" data-aos="fade-up" data-aos-delay=»100″>
-                    <input type="submit" value="Enviar"/>
-                    <input type="reset" value="Limpiar">
-            </div>    
-         </form>     
-    </div>
+                    <input type="text" id="nombre" name="nombre" required="True" placeholder="Nombre">
+                </div>
+                
+                <div class="elemento" data-aos="fade-up" data-aos-delay=»100″>
+                    <input type="email" name="email" placeholder="E-mail" required="True">
+                </div>  
 
+                <div class="pregunta" data-aos="fade-up" data-aos-delay=»100″>   
+                    <textarea name="comentarios" placeholder="Pregunta" required="1"></textarea>
+                </div>   
+                
+                <div class="promociones" data-aos="fade-up" data-aos-delay=»100″>
+                    <label for="newsletter">¿Desea recibir promociones y/o descuentos?</label>
+                    <input  type="checkbox" name="newsletter" value="1">
+                </div>    
+                    <div class="elemento" data-aos="fade-up" data-aos-delay=»100″>
+                        <input type="submit" value="Enviar"/>
+                        <input type="reset" value="Limpiar">
+                </div>    
+            </form>  
+        </div>  
+
+    </div>
 
 <footer>
     <div> 
