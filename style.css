@@ -298,6 +298,14 @@ div a:active {
   margin-top: 20px;
 }
 
+.tuSushiman .video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  margin: 1px;
+}
+
 .alumnos {
   background-color: #fff;
   padding: 50px 0;
