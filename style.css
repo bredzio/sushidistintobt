@@ -65,6 +65,7 @@ header {
 .header2 {
   position: fixed;
   height: 120px;
+  z-index: 666;
 }
 
 .header2 nav {

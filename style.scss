@@ -18,6 +18,7 @@ $a-hover-color:#A25768;
 $a-active-color:#6f3a46;
 $footer-background-color:#77444f;
 $footer-border:10px solid cadetblue;
+
 //
 
 //
@@ -72,6 +73,7 @@ header{
 .header2{
     position: fixed;
     height: 120px;
+    z-index: 666;
 
     nav{
         line-height: 100px;
