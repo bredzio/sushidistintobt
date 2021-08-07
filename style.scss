@@ -1,4 +1,3 @@
-@import "node_modules/bootstrap/scss/bootstrap";
 //
 //RESET
 //
@@ -19,13 +18,13 @@ $a-hover-color:#A25768;
 $a-active-color:#6f3a46;
 $footer-background-color:#77444f;
 $footer-border:10px solid cadetblue;
-
-$danger:green;
-
+$theme-colors:(
+    "danger" :#A25768,
+ );
+ 
 //
 //@EXTENDS
 //
-
 
 .design-background{
     background-repeat: no-repeat; 
@@ -815,4 +814,4 @@ footer{
 }
 //
 
-  
+@import "node_modules/bootstrap/scss/bootstrap";  
