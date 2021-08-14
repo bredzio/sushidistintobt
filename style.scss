@@ -27,6 +27,7 @@ $theme-colors:(
  );
 
 
+
 //
 //@EXTENDS
 //
@@ -541,6 +542,8 @@ div a:active{
 .flex-container-servicios{
     @extend .display-flex-center;
     flex-wrap: wrap;
+    margin:70px 50px;
+    gap:50px;
 }
 
 .flex-item-servicios{
@@ -562,8 +565,8 @@ div a:active{
     }
     
     img{
-        width: 300px;;
-        height: 200px;
+        width: 18rem;;
+        height: 18rem;
         border-radius: 5px;
         margin: 10px 0;
     }
@@ -634,13 +637,13 @@ div a:active{
     }
 
     .imagen{
+        margin: 15px;
         display: flex;
         height: 500px;
-        width: 500px;
+        width: 400px;
+        border-radius: 10px;
     }
 }
-
-
 
 .motivos{
     @extend .display-flex-center;
