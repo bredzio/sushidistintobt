@@ -1,3 +1,7 @@
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/mixins";
+
 //
 //RESET
 //
@@ -21,7 +25,8 @@ $footer-border:10px solid cadetblue;
 $theme-colors:(
     "danger" :#A25768,
  );
- 
+
+
 //
 //@EXTENDS
 //
@@ -814,4 +819,4 @@ footer{
 }
 //
 
-@import "node_modules/bootstrap/scss/bootstrap";  
+@import "./node_modules/bootstrap/scss/bootstrap";  
