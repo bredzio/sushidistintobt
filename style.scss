@@ -178,7 +178,7 @@ div a:active{
     height: 45em;
     padding:6rem 0 0 0;
 
-    .tituloPrincipal{
+    .titulo-principal{
         flex: 1;
         margin: 120px 10px 100px 0;
 
@@ -218,7 +218,7 @@ div a:active{
     height: 40em;
     padding: 6rem 0;
 
-    .tituloPrincipal{
+    .titulo-principal{
         flex: 1;
         margin: 120px 10px 100px 0;
 
@@ -232,7 +232,7 @@ div a:active{
 }
 
 
-.divBotones{
+.div-botones{
     @extend .display-flex-center;
 }
 //
@@ -241,7 +241,7 @@ div a:active{
 //CURSO RECOMENDADO
 //
 
-.cursoRecomendado { 
+.curso-recomendado { 
     @extend .display-flex-center;
     min-height: 700px;    
     flex-wrap: nowrap;
@@ -284,14 +284,14 @@ div a:active{
 
 }
 
-.divBotonesRecomendado{
+.div-botones-recomendado{
     @extend .display-flex-center;
 }
 
 
 
 /* Tu Sushiman */
-.tuSushiman{
+.tu-sushiman{
     @extend .display-flex-center;
     background-color: #000;
     flex-direction:row;
@@ -438,7 +438,7 @@ div a:active{
 }
 
 
-.divFormulario{
+.div-formulario{
     @extend .display-flex-center;
 }
 
@@ -576,11 +576,11 @@ div a:active{
 //
 //SOBRE NOSOTROS - FLEX
 //
-.flexpadre{
+.flex-padre{
     gap: 30rem;
     padding: 5rem 0;
 
-    .contenidomaster{
+    .contenido-master{
         @extend .display-flex-center;
         flex-direction: row;
         flex-wrap: wrap;
