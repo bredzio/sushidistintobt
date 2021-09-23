@@ -21,18 +21,19 @@ class Curso{
 }
 
 const curso1={ nivel:1,
-               precio:266,
+               precio:1700,
                contenido:"Cocción del arroz\nVinagreta Zu\nCortes del salmón"};
 
 
-const curso2= new Curso(2,266,"Arroz con Tinta de Calamar");
-const curso3= new Curso(3,466, "Todo lo que necesitás a un precio increible");
+const curso2= new Curso(2,1700,"Arroz con Tinta de Calamar");
+const curso3= new Curso(3,2800, "Todo lo que necesitás a un precio increible");
 
 cursos.push(curso1);
 cursos.push(curso2);
+cursos.push(curso3);
 
 do{
-    opcion=parseInt(prompt("Seleccione una opción para continuar: \n 1.Mostrar cursos disponibles \n 2.Agregar un curso al carrito \n 3.Quitar un curso del carrito \n 4.Mostrar Carrito \n 5.Salir"));
+    opcion=parseInt(prompt("Seleccione una opción para continuar: \n 1.Mostrar cursos disponibles \n 2.Agregar un curso al carrito \n 3.Quitar un curso del carrito \n 4.Mostrar Carrito"));
     switch (opcion){
         case 1:
             alert("Cursos Disponibles");
@@ -68,29 +69,37 @@ do{
             break;
         
         case 4:
-            alert("Carrito");
-            for (const c of carrito){
-                alert("Nivel "+c.nivel+"\n"+c.contenido+"\n$"+c.precio+"\n");
-                
-            }
-
-            let aPagar=Total(carrito);
-            alert("Total: $"+aPagar);
-            break;  
         
-        case 5:
-            break;  
-            
+        let productos=document.getElementsByClassName("my-0-productos");
+        let m=0;
+        for (const c of carrito){
+            productos[m].innerHTML="Nivel "+c.nivel;   
+            m++;
+        }
+
+        let precios=document.getElementsByClassName("text-muted-precio");
+        let k=0;
+        for (const c of carrito){
+            precios[k].innerHTML="$"+c.precio;   
+            k++;
+        }
+            let aPagar="$"+Total(carrito);
+            document.getElementById("total").innerHTML=aPagar;
+            break;    
         default:
         alert("Opción invalida"); 
             break;       
     }    
-} while (opcion!=5);
+} while (opcion!=4);
 
 function Total(carrito) {
     let valorTotal=0;
      for(const c of carrito){
         valorTotal=valorTotal+c.precio;
      }
+     valorTotal=valorTotal-500;
     return valorTotal;
 } 
+
+
+
