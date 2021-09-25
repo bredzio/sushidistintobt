@@ -92,6 +92,12 @@ do{
     }    
 } while (opcion!=4);
 
+traerDatosDePaises();
+document.querySelector('#country').addEventListener('click',traerDatosDeProvincias);
+
+
+
+
 function Total(carrito) {
     let valorTotal=0;
      for(const c of carrito){
@@ -100,6 +106,76 @@ function Total(carrito) {
      valorTotal=valorTotal-500;
     return valorTotal;
 } 
+
+
+function traerDatosDeProvincias(){
+    let texto= document.getElementById("country");
+    let selected = texto.options[texto.selectedIndex].text;
+    if(selected=='Argentina'){
+        llenarConDatosDeProvincias();
+    }else{
+        let res = document.querySelector('#state');
+        res.innerHTML=`
+        <option>Otra</option>
+        `;
+    }
+}
+
+
+function traerDatosDePaises(){
+    const xhttp= new XMLHttpRequest();
+    xhttp.open('GET', './json/paises.json',true);
+    xhttp.send();
+    
+
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status ==200){
+           let paises = JSON.parse(this.responseText);
+           ordenarAsc(paises, 'name'); 
+           let res = document.querySelector('#country');
+           res.innerHTML='';
+           for(let item of paises){
+                
+            res.innerHTML += `
+                <option>${item.name}</option>
+                `
+            }
+        }
+    }
+    let pais = document.getElementById("country").value;
+    console.log(pais.innerHTML);
+
+}
+
+
+function llenarConDatosDeProvincias(){
+    const xhttp= new XMLHttpRequest();
+    xhttp.open('GET', './json/provincias.json',true);
+    xhttp.send();
+
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status ==200){
+           let provincias = JSON.parse(this.responseText);
+           ordenarAsc(provincias, 'nombre'); 
+           console.log(provincias);
+           let res = document.querySelector('#state');
+           res.innerHTML='';
+           for(let item of provincias){
+                
+            res.innerHTML += `
+                <option>${item.nombre}</option>
+                `
+            }
+
+        }
+    }
+}
+
+function ordenarAsc(p_array_json, p_key) {
+    p_array_json.sort(function (a, b) {
+       return a[p_key] > b[p_key];
+    });
+ }
 
 
 
