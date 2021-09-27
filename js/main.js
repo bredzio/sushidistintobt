@@ -1,6 +1,100 @@
-alert("Academia Sushi Distinto");
-let opcion=0;
-let numCurso=0;
+const items = document.getElementById('items');
+const templateCard = document.getElementById('template-card').content
+const fragment = document.createDocumentFragment();
+let carrito=[]
+
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    fetchData()
+})
+
+
+
+items.addEventListener('click',e=>{
+    addCarrito(e)
+})
+
+const fetchData = async()=> {
+    try{
+        const res= await fetch('./json/cursos.json')
+        const data = await res.json()
+        //console.log(data)
+        pintarCards(data)
+    }catch(error){
+        console.log(error)
+    }
+}
+
+const pintarCards = data =>{
+    data.forEach(producto=>{
+        templateCard.querySelector('h4').textContent=producto.title
+        templateCard.querySelector('h1').textContent=producto.precio
+        templateCard.querySelector('.btn-outline-danger').dataset.id=producto.id
+        const prueba = producto.contenido
+        
+        
+        for (const c of prueba){
+            templateCard.querySelector('li').innerHTML +=`<li>${c}</li>`
+        };
+
+        const clone = templateCard.cloneNode(true)
+        fragment.appendChild(clone)
+        templateCard.querySelector('li').textContent =""
+
+    })
+    
+    items.appendChild(fragment)
+}
+
+const addCarrito = e =>{
+    if(e.target.classList.contains('btn-outline-danger')){
+        console.log(e.target.parentElement)
+        setCarrito(e.target.parentElement)
+    }
+    e.stopPropagation()
+}
+
+const setCarrito = objeto=>{
+    const producto ={
+        id:objeto.querySelector('.btn-outline-danger').dataset.id,
+        nivel:objeto.querySelector('h4').textContent,
+        precio:objeto.querySelector('h1').textContent
+    }
+    carrito[producto.id]={...producto}
+
+
+    localStorage.setItem( 'objectToPass', JSON.stringify(carrito) );
+    var myData = localStorage.getItem("objectToPass");
+    var dato=JSON.parse(myData);
+    for(const c of dato){
+        if(c != null){
+            console.log(c)
+        }
+    }
+    
+}
+
+
+
+/*const pintarCarrito=()=>{
+    console.log(carrito)
+    let cart=document.getElementsByClassName("animal");
+    console.log(cart);
+    Object.values(carrito).forEach(producto=>{
+        cart[0].innerHTML=producto.nivel;  
+    })
+    
+     
+
+
+
+}*/
+
+
+
+
+
+/*
 const cursos=[];
 const carrito=[];
 
@@ -9,7 +103,7 @@ class Curso{
         this.nivel=nivel;
         this.precio=precio;
         this.contenido=contenido;
-    }
+    }s
 
     agregarCurso(){
         alert("Agregaste el curso al carrito");
@@ -91,91 +185,10 @@ do{
             break;       
     }    
 } while (opcion!=4);
-
-traerDatosDePaises();
-document.querySelector('#country').addEventListener('click',traerDatosDeProvincias);
+*/
 
 
 
-
-function Total(carrito) {
-    let valorTotal=0;
-     for(const c of carrito){
-        valorTotal=valorTotal+c.precio;
-     }
-     valorTotal=valorTotal-500;
-    return valorTotal;
-} 
-
-
-function traerDatosDeProvincias(){
-    let texto= document.getElementById("country");
-    let selected = texto.options[texto.selectedIndex].text;
-    if(selected=='Argentina'){
-        llenarConDatosDeProvincias();
-    }else{
-        let res = document.querySelector('#state');
-        res.innerHTML=`
-        <option>Otra</option>
-        `;
-    }
-}
-
-
-function traerDatosDePaises(){
-    const xhttp= new XMLHttpRequest();
-    xhttp.open('GET', './json/paises.json',true);
-    xhttp.send();
-    
-
-    xhttp.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status ==200){
-           let paises = JSON.parse(this.responseText);
-           ordenarAsc(paises, 'name'); 
-           let res = document.querySelector('#country');
-           res.innerHTML='';
-           for(let item of paises){
-                
-            res.innerHTML += `
-                <option>${item.name}</option>
-                `
-            }
-        }
-    }
-    let pais = document.getElementById("country").value;
-    console.log(pais.innerHTML);
-
-}
-
-
-function llenarConDatosDeProvincias(){
-    const xhttp= new XMLHttpRequest();
-    xhttp.open('GET', './json/provincias.json',true);
-    xhttp.send();
-
-    xhttp.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status ==200){
-           let provincias = JSON.parse(this.responseText);
-           ordenarAsc(provincias, 'nombre'); 
-           console.log(provincias);
-           let res = document.querySelector('#state');
-           res.innerHTML='';
-           for(let item of provincias){
-                
-            res.innerHTML += `
-                <option>${item.nombre}</option>
-                `
-            }
-
-        }
-    }
-}
-
-function ordenarAsc(p_array_json, p_key) {
-    p_array_json.sort(function (a, b) {
-       return a[p_key] > b[p_key];
-    });
- }
 
 
 
