@@ -9,7 +9,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 items.addEventListener('click',e=>{
-    addCarrito(e)
+    addCarrito(e),
+    toastr.success('Ir al carrito', 'Producto agregado', {
+        "positionClass": "toast-bottom-right",
+         "progressBar": true,
+        "closeButton": true,
+        timeOut: 5000,
+        onHidden: function() {
+            window.location.href = '/checkout.html';
+        }    
+        })
 })
 
 const fetchData = async()=> {

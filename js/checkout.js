@@ -1,10 +1,9 @@
 var myData = localStorage.getItem("objectToPass");
 localStorage.clear();
 var dato=JSON.parse(myData);
-
-let dto=0;
 traerDatosDePaises();
 document.querySelector('#country').addEventListener('click',traerDatosDeProvincias);
+let dto=0;
 valorTotal(dto)
 
 document.querySelector('#canjear').addEventListener('click',cupon);
@@ -24,7 +23,13 @@ for (const d of dato){
 function comprar(){
    var myData = parseInt(localStorage.getItem("objectToPass"));
    localStorage.clear();
-   switch(myData){
+   toastr.success('Realizada exitosamente', 'Compra', {
+    "positionClass": "toast-bottom-right",
+     "progressBar": true,
+    "closeButton": true,
+    timeOut: 5000,
+    })
+   /*switch(myData){
         case 1700:
             window.location.href="https://mpago.la/2K2Av4V";
             break;
@@ -36,7 +41,7 @@ function comprar(){
             break;
         default:
             break;    
-    }
+    }*/
 }
 
 
@@ -63,7 +68,7 @@ function valorTotal(dto){
 
 function cupon(){
     let cupon=document.getElementsByClassName("form-control")[0].value;
-    if(cupon==="SUSHIPROMO"){        
+    if(cupon==="SUSHIPROMO"){      
         let codigopromo=document.getElementById("promoo");
         codigopromo.innerHTML=`<h6 class="my-0 " id="promoo" >Código promocional</h6>
         <small>${cupon}</small>`
@@ -74,7 +79,6 @@ function cupon(){
         let total=document.getElementById("total").value;
         let dto=500;
         valorTotal(dto);
-
     }
 
 }
@@ -129,7 +133,6 @@ function traerDatosDePaises(){
     let pais = document.getElementById("country").value;
 
 }
-
 
 function llenarConDatosDeProvincias(){
     const xhttp= new XMLHttpRequest();
