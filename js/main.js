@@ -16,7 +16,7 @@ items.addEventListener('click',e=>{
         "closeButton": true,
         timeOut: 5000,
         onHidden: function() {
-            window.location.href = '/checkout.html';
+            window.location.href = './checkout.html';
         }    
         })
 })
