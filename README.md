@@ -3,4 +3,4 @@ Sitio web para una pequeña empresa que se dedica a comercializar cursos de gast
 Maquetado web con implementación de diseño responsive y UX.
 Diseño y desarrollo frontend con HTML5, CSS Y Javascript.
 
-<a href:https://bredzio.github.io/sushidistintobt> Ir al sitio</a>
+[Ir al sitio](https://bredzio.github.io/sushidistintobt/)! 
