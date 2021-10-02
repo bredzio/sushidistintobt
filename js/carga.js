@@ -11,6 +11,6 @@ function cargarCarrito(){
             cont++;
         }
     }
-    let cart=document.getElementById("cart");
+    let cart=document.getElementById("countCart");
     cart.innerHTML=`${cont}`
 }

@@ -79,7 +79,7 @@ const setCarrito = objeto=>{
     }
     console.log(cont)
 
-    let cart=document.getElementById("cart");
+    let cart=document.getElementById("countCart");
     cart.innerHTML=`${cont}`
     
 }
