@@ -15,9 +15,9 @@ items.addEventListener('click',e=>{
          "progressBar": true,
         "closeButton": true,
         timeOut: 5000,
-        onHidden: function() {
-            window.location.href = './checkout.html';
-        }    
+        //onHidden: function() {
+        //    window.location.href = './checkout.html';
+        //}    
         })
 })
 
@@ -71,10 +71,16 @@ const setCarrito = objeto=>{
     localStorage.setItem( 'objectToPass', JSON.stringify(carrito) );
     var myData = localStorage.getItem("objectToPass");
     var dato=JSON.parse(myData);
+    var cont=0;
     for(const c of dato){
         if(c != null){
-            console.log(c)
+            cont++;
         }
     }
+    console.log(cont)
+
+    let cart=document.getElementById("cart");
+    cart.innerHTML=`${cont}`
     
 }
+
