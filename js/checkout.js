@@ -21,6 +21,7 @@ for (const d of dato){
 }
 
 function comprar(){
+   event.preventDefault();
    var myData = parseInt(localStorage.getItem("objectToPass"));
    localStorage.clear();
    toastr.success('Realizada exitosamente', 'Compra', {
@@ -29,19 +30,6 @@ function comprar(){
     "closeButton": true,
     timeOut: 5000,
     })
-   /*switch(myData){
-        case 1700:
-            window.location.href="https://mpago.la/2K2Av4V";
-            break;
-        case 3400:
-            window.location.href="https://mpago.la/1M95wUF";
-            break;
-        case 5100:
-            window.location.href="https://mpago.la/2GRPedK";
-            break;
-        default:
-            break;    
-    }*/
 }
 
 

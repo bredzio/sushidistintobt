@@ -9,16 +9,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 items.addEventListener('click',e=>{
-    addCarrito(e),
-    toastr.success('Ir al carrito', 'Producto agregado', {
-        "positionClass": "toast-bottom-right",
-         "progressBar": true,
-        "closeButton": true,
-        timeOut: 5000,
-        //onHidden: function() {
-        //    window.location.href = './checkout.html';
-        //}    
-        })
+    addCarrito(e)
+    
 })
 
 const fetchData = async()=> {
@@ -34,7 +26,7 @@ const fetchData = async()=> {
 const cargarCursos = data =>{
     data.forEach(producto=>{
         templateCard.querySelector('h4').textContent=producto.title
-        templateCard.querySelector('h1').textContent=producto.precio
+        templateCard.querySelector('h1').innerHTML=`$${producto.precio}`
         templateCard.querySelector('.btn-outline-danger').dataset.id=producto.id
         const prueba = producto.contenido
         
@@ -53,8 +45,16 @@ const cargarCursos = data =>{
 
 const addCarrito = e =>{
     if(e.target.classList.contains('btn-outline-danger')){
-        console.log(e.target.parentElement)
-        setCarrito(e.target.parentElement)
+        setCarrito(e.target.parentElement),
+        toastr.success('Ir al carrito', 'Producto agregado', {
+            "positionClass": "toast-bottom-right",
+             "progressBar": true,
+            "closeButton": true,
+            timeOut: 5000,
+            onHidden: function (toast) {
+                toast.onclick = window.location.href = './checkout.html';
+            }   
+            })
     }
     e.stopPropagation()
 }
@@ -63,8 +63,9 @@ const setCarrito = objeto=>{
     const producto ={
         id:objeto.querySelector('.btn-outline-danger').dataset.id,
         nivel:objeto.querySelector('h4').textContent,
-        precio:objeto.querySelector('h1').textContent
+        precio:objeto.querySelector('h1').textContent.substring(1)
     }
+    
     carrito[producto.id]={...producto}
 
 
