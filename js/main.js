@@ -1,8 +1,7 @@
 const items = document.getElementById('items');
 const templateCard = document.getElementById('template-card').content
 const fragment = document.createDocumentFragment();
-let carrito=[]
-
+let carrito={}
 
 document.addEventListener('DOMContentLoaded', ()=>{
     fetchData()
@@ -24,6 +23,7 @@ const fetchData = async()=> {
 }
 
 const cargarCursos = data =>{
+
     data.forEach(producto=>{
         templateCard.querySelector('h4').textContent=producto.title
         templateCard.querySelector('h1').innerHTML=`$${producto.precio}`
@@ -50,10 +50,10 @@ const addCarrito = e =>{
             "positionClass": "toast-bottom-right",
              "progressBar": true,
             "closeButton": true,
-            timeOut: 5000,
             onHidden: function (toast) {
                 toast.onclick = window.location.href = './checkout.html';
-            }   
+            },
+            timeOut: 5000   
             })
     }
     e.stopPropagation()
@@ -63,22 +63,24 @@ const setCarrito = objeto=>{
     const producto ={
         id:objeto.querySelector('.btn-outline-danger').dataset.id,
         nivel:objeto.querySelector('h4').textContent,
-        precio:objeto.querySelector('h1').textContent.substring(1)
+        precio:objeto.querySelector('h1').textContent.substring(1),
+        cantidad:1
     }
     
-    carrito[producto.id]={...producto}
+    if(carrito.hasOwnProperty(producto.id)){
+        producto.cantidad=carrito[producto.id].cantidad+1
+    }
 
+    carrito[producto.id]={...producto}
 
     localStorage.setItem( 'objectToPass', JSON.stringify(carrito) );
     var myData = localStorage.getItem("objectToPass");
     var dato=JSON.parse(myData);
     var cont=0;
-    for(const c of dato){
-        if(c != null){
+    
+    for(const c in carrito){
             cont++;
-        }
     }
-    console.log(cont)
 
     let cart=document.getElementById("countCart");
     cart.innerHTML=`${cont}`

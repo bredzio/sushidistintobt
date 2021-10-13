@@ -1,24 +1,178 @@
-var myData = localStorage.getItem("objectToPass");
-localStorage.clear();
-var dato=JSON.parse(myData);
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
+
+const expresiones = {
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    direccion:/^.{1,40}$/,
+    codPostal: /^\d{1,4}$/
+}
+
+const campos = {
+	direccion: false,
+	nombre: false,
+	apellido: false,
+	correo: false,
+	codigo:false
+}
+
+const validarFormulario = (e) => {
+    console.log(e.target.name)
+    switch (e.target.name) {
+		case "nombre":
+			validarCampo(expresiones.nombre, e.target, 'nombre');
+		break;
+        case "apellido":
+			validarCampo(expresiones.nombre, e.target, 'apellido');
+		break;
+        case "correo":
+			validarCampo(expresiones.correo, e.target, 'correo');
+		break;
+
+        case "direccion":
+			validarCampo(expresiones.direccion, e.target, 'direccion');
+		break;
+
+        case "codigo":
+			validarCampo(expresiones.codPostal, e.target, 'codigo');
+		break;
+
+	}
+}
+
+const validarCampo = (expresion, input, campo) => {
+    if(expresion.test(input.value)){
+        campos[campo] = true;
+	} else {
+		campos[campo] = false;
+	}
+}
+
+
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
+
+formulario.addEventListener('submit', (e) => {
+	e.preventDefault();
+    if(campos.nombre && campos.apellido && campos.correo && campos.direccion && campos.codigo){
+		formulario.reset();
+        
+        toastr.success('¡Realizada exitosamente!', 'COMPRA', {
+            "positionClass": "toast-top-center",
+             "progressBar": true,
+            "closeButton": true,
+            timeOut: 5000,  
+            });
+        
+        
+	} else {
+		toastr.error('Por favor rellena los datos correctamente', 'ERROR', {
+            "positionClass": "toast-top-center",
+             "progressBar": true,
+            "closeButton": true,
+            timeOut: 5000,  
+            });
+	}
+});
+
+
+
+const niveles=document.getElementById('niveles');
+const footer=document.getElementById('footer');
+
+const templateFooter = document.getElementById('template-footer').content
+const templateCarrito = document.getElementById('template-carrito').content
+const fragment = document.createDocumentFragment();
+let carrito ={}
 traerDatosDePaises();
 document.querySelector('#country').addEventListener('click',traerDatosDeProvincias);
-let dto=0;
-valorTotal(dto)
 
-document.querySelector('#canjear').addEventListener('click',cupon);
-document.querySelector('#continuar').addEventListener('click',comprar);
+document.addEventListener('DOMContentLoaded', e => {fetchData()});
+niveles.addEventListener('click', e => { btnAumentarDisminuir(e) })
 
-let productos=document.getElementsByClassName("my-0-productos");
-let m=0;
-
-for (const d of dato){
-    if(d != null){
-        productos[m].innerHTML=d.nivel;   
-        m++;
-    }
-   
+const fetchData = async () => {
+    var myData = localStorage.getItem("objectToPass");      
+    localStorage.clear();
+    const data = JSON.parse(myData)
+    carrito=data
+    console.log(carrito)
+    pintarCarrito()
 }
+
+
+const pintarCarrito = () =>{
+    niveles.innerHTML=''
+    Object.values(carrito).forEach(producto=>{
+            templateCarrito.querySelectorAll('td')[0].textContent=producto.nivel
+            templateCarrito.querySelectorAll('td')[1].textContent=producto.cantidad
+            templateCarrito.querySelector('span').textContent=producto.cantidad*producto.precio
+            
+            templateCarrito.querySelector('.btn-info').dataset.id = producto.id
+            templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
+
+            const clone = templateCarrito.cloneNode(true)
+            fragment.appendChild(clone)
+    })
+    niveles.appendChild(fragment)
+    pintarFooter()
+}
+
+const pintarFooter = () => {
+    footer.innerHTML = ''
+
+    if (Object.keys(carrito).length === 0) {
+        footer.innerHTML = `
+        <th scope="row" colspan="5">Carrito vacío con innerHTML</th>
+        `
+        return
+    }
+    
+    const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
+    const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
+    
+
+    templateFooter.querySelectorAll('td')[0].textContent = nCantidad
+    templateFooter.querySelector('span').textContent = nPrecio
+
+    const clone = templateFooter.cloneNode(true)
+    fragment.appendChild(clone)
+
+    footer.appendChild(fragment)
+
+    const boton = document.querySelector('#vaciar-carrito')
+    boton.addEventListener('click', () => {
+        carrito = {}
+        pintarCarrito()
+    })
+
+}
+
+const btnAumentarDisminuir = e => {
+    if (e.target.classList.contains('btn-info')) {
+        const producto = carrito[e.target.dataset.id]
+        producto.cantidad++
+        carrito[e.target.dataset.id] = { ...producto }
+        pintarCarrito(carrito)
+    }
+
+    if (e.target.classList.contains('btn-danger')) {
+        const producto = carrito[e.target.dataset.id]
+        producto.cantidad--
+        if (producto.cantidad === 0) {
+            delete carrito[e.target.dataset.id]
+        } else {
+            carrito[e.target.dataset.id] = {...producto}
+        }
+        pintarCarrito()
+    }
+    e.stopPropagation()
+}
+
+
 
 function comprar(){
    event.preventDefault();
@@ -32,55 +186,6 @@ function comprar(){
     })
 }
 
-
-function valorTotal(dto){
-    let total=0;
-    let precios=document.getElementsByClassName("text-muted-precio");
-
-    let k=0;
-    for (const c of dato){
-        if(c != null){
-        precios[k].innerHTML=`$${c.precio}`;   
-        k++;
-
-        total=total+parseInt(c.precio)-dto;
-        }
-        
-    }
-    localStorage.setItem( 'objectToPass', total);
-    
-    document.getElementById("total").innerHTML=`$${total}`;
-    document.getElementById("cant").innerHTML=`${k}`;
-}
-          
-
-function cupon(){
-    let cupon=document.getElementsByClassName("form-control")[0].value;
-    if(cupon==="SUSHIPROMO"){      
-        let codigopromo=document.getElementById("promoo");
-        codigopromo.innerHTML=`<h6 class="my-0 " id="promoo" >Código promocional</h6>
-        <small>${cupon}</small>`
-
-        let descuento=document.getElementById("descuento");
-        descuento.innerHTML=` <span class="text-success" id="descuento">-$500</span>`
-        
-        let total=document.getElementById("total").value;
-        let dto=500;
-        valorTotal(dto);
-    }
-
-}
-
-
-function Total(carrito) {
-    let valorTotal=0;
-     for(const c of carrito){
-        valorTotal=valorTotal+c.precio;
-     }
-     
-     valorTotal=valorTotal;
-    return valorTotal;
-} 
 
 
 function traerDatosDeProvincias(){

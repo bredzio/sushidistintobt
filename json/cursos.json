@@ -1,6 +1,7 @@
 [{
     "id": 1,
     "title":"Nivel 1",
+    "cantidad":0,
     "contenido": [
         "Cocción del arroz",
         "Vinagreta Zu",
@@ -18,6 +19,7 @@
 {
     "id": 2,
     "title":"Nivel 2",
+    "cantidad":0,
     "contenido": [
         "Arroz con Tinta de Calamar",
         "Vinagreta Zu",
@@ -33,6 +35,7 @@
 },{
     "id": 3,
     "title":"Nivel 3",
+    "cantidad":0,
     "contenido": [
             "Arroz con Tinta de Calamar",
         "Vinagreta Zu",
