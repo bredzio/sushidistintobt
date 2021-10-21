@@ -1,5 +1,16 @@
+/*------------ FORMULARIO -----------------*/
+
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
+
+/* Función que carga todos los paises consumiendo el archivo PAISES.JSON */
+traerDatosDePaises();
+
+/* Función que carga todos las provincias de Argentina en consumiendo el archivo PROVINCIAS.JSON, si se elige otro pais ofrece la opción "OTROS.." */
+document.querySelector('#country').addEventListener('click',traerDatosDeProvincias);
+
+
+/* Expresiones regulares para validar información del formulario */
 
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -17,6 +28,8 @@ const campos = {
 	correo: false,
 	codigo:false
 }
+
+/* Testing con las expresiones regulares generadas anteriormente */
 
 const validarFormulario = (e) => {
     console.log(e.target.name)
@@ -56,6 +69,8 @@ inputs.forEach((input) => {
 	input.addEventListener('blur', validarFormulario);
 });
 
+/* Valida si todos los datos son correctos. Depende la respuesta, genera un toast distinto */
+
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
     if(campos.nombre && campos.apellido && campos.correo && campos.direccion && campos.codigo){
@@ -79,7 +94,7 @@ formulario.addEventListener('submit', (e) => {
 	}
 });
 
-
+/*------------ CARRITO -----------------*/
 
 const niveles=document.getElementById('niveles');
 const footer=document.getElementById('footer');
@@ -88,9 +103,9 @@ const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment();
 let carrito ={}
-traerDatosDePaises();
-document.querySelector('#country').addEventListener('click',traerDatosDeProvincias);
 
+
+/* Pinta el carrito con la información guardada en el localStorage */
 document.addEventListener('DOMContentLoaded', e => {fetchData()});
 niveles.addEventListener('click', e => { btnAumentarDisminuir(e) })
 
@@ -99,7 +114,6 @@ const fetchData = async () => {
     localStorage.clear();
     const data = JSON.parse(myData)
     carrito=data
-    console.log(carrito)
     pintarCarrito()
 }
 
@@ -126,7 +140,7 @@ const pintarFooter = () => {
 
     if (Object.keys(carrito).length === 0) {
         footer.innerHTML = `
-        <th scope="row" colspan="5">Carrito vacío con innerHTML</th>
+        <th scope="row" colspan="5">Carrito vacío</th>
         `
         return
     }
@@ -150,6 +164,7 @@ const pintarFooter = () => {
     })
 
 }
+/* Funcionalidad para sumar y restar dentro del carrito */
 
 const btnAumentarDisminuir = e => {
     if (e.target.classList.contains('btn-info')) {
@@ -172,6 +187,7 @@ const btnAumentarDisminuir = e => {
     e.stopPropagation()
 }
 
+/*------------ FUNCIONES -----------------*/
 
 
 function comprar(){

@@ -3,13 +3,10 @@ const templateCard = document.getElementById('template-card').content
 const fragment = document.createDocumentFragment();
 let carrito={}
 
+/* Se cargan los datos del archivo CURSO.JSON */
+
 document.addEventListener('DOMContentLoaded', ()=>{
     fetchData()
-})
-
-items.addEventListener('click',e=>{
-    addCarrito(e)
-    
 })
 
 const fetchData = async()=> {
@@ -22,15 +19,15 @@ const fetchData = async()=> {
     }
 }
 
-const cargarCursos = data =>{
+/* Se "pintan" dinámicamente los datos del archivo CURSO.JSON en templates ubicados en HTML */
 
+const cargarCursos = data =>{
     data.forEach(producto=>{
         templateCard.querySelector('h4').textContent=producto.title
         templateCard.querySelector('h1').innerHTML=`$${producto.precio}`
         templateCard.querySelector('.btn-outline-danger').dataset.id=producto.id
-        const prueba = producto.contenido
         
-        for (const c of prueba){
+        for (const c of producto.contenido){
             templateCard.querySelector('li').innerHTML +=`<li>${c}</li>`
         };
 
@@ -42,6 +39,13 @@ const cargarCursos = data =>{
     
     items.appendChild(fragment)
 }
+
+/* Eventos y funciones para agregar cursos al carrito */
+
+items.addEventListener('click',e=>{
+    addCarrito(e)
+    
+})
 
 const addCarrito = e =>{
     if(e.target.classList.contains('btn-outline-danger')){
@@ -59,6 +63,8 @@ const addCarrito = e =>{
     e.stopPropagation()
 }
 
+/* Se alojan los objetos en el localStorage. Además se pinta el contador del carrito */
+
 const setCarrito = objeto=>{
     const producto ={
         id:objeto.querySelector('.btn-outline-danger').dataset.id,
@@ -75,15 +81,10 @@ const setCarrito = objeto=>{
 
     localStorage.setItem( 'objectToPass', JSON.stringify(carrito) );
     var myData = localStorage.getItem("objectToPass");
-    var dato=JSON.parse(myData);
-    var cont=0;
     
-    for(const c in carrito){
-            cont++;
-    }
-
+    
     let cart=document.getElementById("countCart");
-    cart.innerHTML=`${cont}`
-    
+    cart.innerHTML=`${Object.keys(JSON.parse(myData)).length}`
+   
 }
 
