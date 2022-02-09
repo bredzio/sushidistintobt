@@ -1,7 +1,11 @@
-# sushidistintobt
+# Sushi Distinto
 Sitio web para una pequeña empresa que se dedica a comercializar cursos de gastronomía oriental.
 Maquetado web con implementación de diseño responsive y UX.
 Diseño y desarrollo frontend con HTML5, CSS Y Javascript.
+
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/85000317/153306858-d49a33c9-9187-488d-84c8-cd7d0771174c.gif" alt="project preview" />
+</p>
 
 [Ir al sitio](https://bredzio.github.io/sushidistintobt/)! 
 
